@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "e9aaff5f-0b74-4a0b-8a80-71d37b6feb1d",
+		"name": "jwt_tutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/hellouser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaXNVc2VyIjp0cnVlLCJleHAiOjE1OTc2OTcyNTksImlhdCI6MTU5NzY4ODI1OX0.gusdcvc1T9jhp-VKbcQcx0RyjuIgSmrMzau99GJF0m8DQwBErwcyG1NdVafybZlJcpifx5L7Gg9tBGI6fHmrXA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hellouser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hellouser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/helloadmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaXNVc2VyIjp0cnVlLCJleHAiOjE1OTc3MDE4NzIsImlhdCI6MTU5NzY4Mzg3Mn0.9BTNjtNZ3ksilI-F-Pff7fELDPnR1vZ7TZUYc9mYcrx-Uttg1TNd5v8SV6ouiqAvfcPP-XSyMKxHiZgUpdiS0A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/helloadmin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"helloadmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"user\",\n    \"password\" : \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"user_1\",\n    \"password\" : \"user_1\",\n    \"role\" : \"ROLE_USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/refreshtoken",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaXNVc2VyIjp0cnVlLCJleHAiOjE1OTc2ODgxMjEsImlhdCI6MTU5NzY4ODA5MX0.1cwOFN9h3jUky63Rqer6fUqdVUzO9WQKsR7PBQEVMQxEm8Cr2ED4gzPRrE3F6KbOdfQ-JRrKjPrg4CBaA1C6vA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "isRefreshToken",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"user_1\",\n    \"password\" : \"user_1\",\n    \"role\" : \"ROLE_USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/refreshtoken",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"refreshtoken"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
